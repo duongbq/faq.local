@@ -1,0 +1,6 @@
+[Fri Feb 14 11:34:24 2014] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined function meta() in /home/duongbq/pspace/faq.local/application/views/layouts/home/front.php on line 6
+[Fri Feb 14 11:34:25 2014] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined function meta() in /home/duongbq/pspace/faq.local/application/views/layouts/home/front.php on line 6
+[Fri Feb 14 11:38:24 2014] [error] [client 127.0.0.1] File does not exist: /home/duongbq/pspace/faq.local/assets/css, referer: http://faq.local/
+[Fri Feb 14 11:38:24 2014] [error] [client 127.0.0.1] File does not exist: /home/duongbq/pspace/faq.local/assets/css
+[Fri Feb 14 11:39:13 2014] [error] [client 127.0.0.1] File does not exist: /home/duongbq/pspace/faq.local/assets/frontend/css/images/favicon.ico
+[Fri Feb 14 15:04:39 2014] [error] [client 127.0.0.1] File does not exist: /home/duongbq/pspace/faq.local/assets/frontend/css/images/favicon.ico
