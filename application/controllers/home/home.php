@@ -16,14 +16,11 @@ if (!defined('BASEPATH'))
  * 
  */
 
-class Home extends CI_Controller {
+class Home extends Front_Controller {
 
     public function __construct() {
 
         parent::__construct();
-        
-        $this->layout->title('Duongbq-FAQs');
-        $this->layout->render_layout('layouts/home/front');
         
         $this->load->model('category_model');
         $this->load->helper('article');

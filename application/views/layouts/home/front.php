@@ -27,14 +27,19 @@
                         <form name="lang" method="post" action="#">
                             <div id="drop_lang_parent">
                                 <select id="drop_lang" class="inputbox" onchange="document.location.replace(this.value);" >
-                                    <option dir="ltr" selected="selected" data-image="<?php echo base_url(); ?>assets/css/images/en.gif">English</option>
-                                    <option dir="ltr" data-image="<?php echo base_url(); ?>assets/css/images/vi.gif">Tiếng Việt</option>
+                                    <option selected="selected" id="en_US"><?php echo lang('drop_lang_English'); ?></option>
+                                    <option id="vi_VN"><?php echo lang('drop_lang_Vietnamese'); ?></option>
                                 </select>
                             </div>
                         </form>                    
                     </div>
                     <ul>
-                        <li class="menu_top"><a href="<?php echo base_url(); ?>">Main</a>  |  <a href="#">Support Home</a>  |  <a href="#">Create Account</a></li>
+                        <li class="menu_top">
+                            <a href="<?php echo base_url(); ?>"><?php echo lang('menu_top_Main'); ?></a>
+                            |  
+                            <a href="#"><?php echo lang('menu_top_Support_Home'); ?></a>
+                            |  
+                            <a href="#"><?php echo lang('menu_top_Create_Account'); ?></a></li>
                     </ul>           
                 </div><!-- End top_right-->
             </header>
@@ -54,7 +59,7 @@
             <!-- end body-->
 
             <footer>
-                <address>© Framgia, Inc. All Rights Reserved.</address>
+                <address><?php echo lang('footer_copy_right'); ?></address>
             </footer>
 
         </div><!-- end wrapper-->
