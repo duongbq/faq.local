@@ -14,7 +14,10 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$proto = "http" . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "s" : "") . "://";
+$server = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'];
+
+$config['base_url'] = $proto . $server;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +29,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

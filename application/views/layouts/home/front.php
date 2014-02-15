@@ -21,7 +21,7 @@
         
         <div id="wrapper">
             <header>
-                <p class="logo_top"></p>
+                <p class="logo_top" onclick="javascript:location.href='<?php echo base_url(); ?>'"></p>
                 <div class="top_right">
                     <div class="languages">
                         <form name="lang" method="post" action="#">
@@ -34,7 +34,7 @@
                         </form>                    
                     </div>
                     <ul>
-                        <li class="menu_top"><a href="#">Main</a>  |  <a href="#">Support Home</a>  |  <a href="#">Create Account</a></li>
+                        <li class="menu_top"><a href="<?php echo base_url(); ?>">Main</a>  |  <a href="#">Support Home</a>  |  <a href="#">Create Account</a></li>
                     </ul>           
                 </div><!-- End top_right-->
             </header>

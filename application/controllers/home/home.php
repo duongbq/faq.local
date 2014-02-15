@@ -24,12 +24,17 @@ class Home extends CI_Controller {
         
         $this->layout->title('Duongbq-FAQs');
         $this->layout->render_layout('layouts/home/front');
+        
+        $this->load->model('category_model');
+        $this->load->helper('article');
     }
 
-    public function index() {
+    public function index($page) {
         
+        $view_data['categories'] = $this->category_model->get_all_with_paging(array('page' => $page, 'per_page' => 6));
+        $view_data['pagination_link'] = $this->category_model->get_pagination_link();
         
-        $this->layout->view('home/home');
+        $this->layout->view('home/home', $view_data);
         
     }
 
