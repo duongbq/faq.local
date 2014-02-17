@@ -183,7 +183,7 @@ h1.detail{
     font-size:25px;
     font-weight:lighter;
     margin:0px 0px 10px;
-    color:#01633f;
+    /*color:#01633f;*/
     text-align:left;
 }
 h4{
@@ -451,11 +451,12 @@ ol li{
 .tx4 a{
     background:url(images/icon2.png) no-repeat;
     padding-left:20px;
-    color:#01633f;
+    color:#808080;
     text-decoration:underline;
 }
 .tx4 a:hover{
-    color:#000;
+    /*color:#000;*/
+    color: orangered;
 }
 button{
     height:30px;

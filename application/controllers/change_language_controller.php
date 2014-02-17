@@ -11,13 +11,23 @@
  *
  * @author duongbq
  */
-class Change_language_controller extends CI_Controller{
-   
+class Change_language_controller extends CI_Controller {
+
     function __construct() {
         parent::__construct();
     }
-    
-    function change_language($param = 'en_US') {
+
+    function change_language() {
         
+        if ($this->input->is_ajax_request()) {
+            
+            $lang = $this->input->post('lang');
+            
+            $this->csession->save('lang', $lang);
+            echo '1';
+        } else {
+            redirect(base_url());
+        }
     }
+
 }

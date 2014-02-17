@@ -22,12 +22,18 @@ class Category_model extends CI_Model {
     }
     
     function get_all() {
+        $this->db->where('lang', !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang')); 
         return $this->db->get($this->table_name)->result();
+    }
+    
+    function get_by_id($category_id = 0) {
+        $this->db->where('id', $category_id); 
+        return $this->db->get($this->table_name)->row(0);
     }
     
     function get_all_with_paging($options = array()) {
         
-        $total_row = $this->db->count_all($this->table_name);
+        $total_row = count($this->get_all()); ;
         
         $config = get_config_paging(array('page' => $options['page'], 'per_page' => $options['per_page'], 'total_rows' => $total_row));
         
@@ -36,6 +42,8 @@ class Category_model extends CI_Model {
         $this->pagination_link = $this->pagination->create_ajax_links();
         
         $this->db->limit($config['limit'], $config['offset']);
+        
+        $this->db->where('lang', !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang')); 
         
         return $this->db->get($this->table_name)->result();
     }

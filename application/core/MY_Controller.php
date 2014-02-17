@@ -23,7 +23,7 @@ class Front_Controller extends CI_Controller {
         
         $this->load->helper('language');
         
-        $this->layout->title('Duongbq-FAQs');
+        $this->layout->title(DEFAULT_SITE_TITLE);
         $this->layout->render_layout('layouts/home/front');
 
         $lang = !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang');

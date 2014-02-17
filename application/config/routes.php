@@ -45,10 +45,11 @@ $route['default_controller'] = "home/home/index/1";
 $route['404_override'] = '';
 
 $route['duongbq'] = "dashboard";
+$route['change_default_language'] = "change_language_controller/change_language";
 
-$route['^home$'] = 'home/home/index/1';
-$route['^home/page-(\d+)$'] = 'home/home/index/$1';
-$route['home/(:any)-i(\d+)'] = 'home/home/view_detail/$2';
+$route['^articles$'] = 'home/home/index/1';
+$route['^articles/page-(\d+)$'] = 'home/home/index/$1';
+$route['article/(:any)-c(\d+)-(:any)-i(\d+)'] = 'home/home/view_detail/$2/$4';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
