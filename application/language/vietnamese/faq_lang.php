@@ -21,3 +21,6 @@ $lang['articles'] = ' bài viết';
 $lang['article'] = ' bài viết';
 $lang['view_all'] = 'Tất cả';
 $lang['last_updated'] = 'Cập nhật lần cuối:';
+
+$lang['related_article'] = 'Bài viết liên quan';
+$lang['same_category'] = 'Bài viết cùng loại';

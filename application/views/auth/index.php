@@ -35,7 +35,7 @@
                     return;
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=205170123024675";
+                js.src = "//connect.facebook.net/english/all.js#xfbml=1&appId=205170123024675";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 

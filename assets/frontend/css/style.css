@@ -250,11 +250,11 @@ span.bg_tx_grey{
 h3{
     font-size:14px;
     text-transform:uppercase;
-    background:url(images/icon1.png) no-repeat;
+    /*background:url(images/icon1.png) no-repeat;*/
     height:26px;
-    padding-top:3px;
-    padding-left:40px;
-    margin:20px 0px 10px 0px;
+    /*padding-top:3px;*/
+    /*padding-left:12px;*/
+    /*margin:20px 0px 10px 0px;*/
 }
 
 .tx1{

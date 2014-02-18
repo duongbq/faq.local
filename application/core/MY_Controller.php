@@ -26,11 +26,13 @@ class Front_Controller extends CI_Controller {
         $this->layout->title(DEFAULT_SITE_TITLE);
         $this->layout->render_layout('layouts/home/front');
 
-        $lang = !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang');
+        $lang = !$this->csession->get('lang') ? 'english' : $this->csession->get('lang');
 
         $this->config->set_item('language', $lang);
         
         $this->lang->load('faq', $lang);
+        
+//        $this->output->enable_profiler(TRUE);
     }
 
 }

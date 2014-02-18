@@ -49,7 +49,8 @@ $route['change_default_language'] = "change_language_controller/change_language"
 
 $route['^articles$'] = 'home/home/index/1';
 $route['^articles/page-(\d+)$'] = 'home/home/index/$1';
-$route['article/(:any)-c(\d+)-(:any)-i(\d+)'] = 'home/home/view_detail/$2/$4';
+
+$route['article/(:any)-c(\d+)-(:any)-i(\d+)'] = 'article/article/view_detail/$2/$4';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

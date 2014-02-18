@@ -21,13 +21,27 @@
 
         <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-1.7.1.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-ui-1.10.3.min.js"></script>
-        <!--<script src="<?php //echo base_url();     ?>assets/backend/js/libs/modernizr-2.0.6.js"></script>-->
-        <!--<script src="<?php //echo base_url();     ?>assets/backend/js/libs/bootstrap.min.js"></script>-->
+        <!--<script src="<?php //echo base_url();      ?>assets/backend/js/libs/modernizr-2.0.6.js"></script>-->
+        <!--<script src="<?php //echo base_url();      ?>assets/backend/js/libs/bootstrap.min.js"></script>-->
 
 
     </head>
 
     <body>
+
+        <!-- AddThis Smart Layers BEGIN -->
+        <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5302f81d2a9e8fc8"></script>
+        <script type="text/javascript">
+            addthis.layers({
+                'theme': 'transparent',
+                'share': {
+                    'position': 'left',
+                    'numPreferredServices': 5
+                }
+            });
+        </script>
+        <!-- AddThis Smart Layers END -->
 
         <div id="wrapper">
             <header>
@@ -41,8 +55,8 @@
                             ?>
 
                             <select id="drop_lang" class="inputbox" onchange="change_default_language();" >
-                                <option <?php echo $lang === 'en_US' ? 'selected' : NULL ?> id="en_US" value="en_US"><?php echo lang('drop_lang_English'); ?></option>
-                                <option <?php echo $lang === 'vi_VN' ? 'selected' : NULL ?> id="vi_VN" value="vi_VN"><?php echo lang('drop_lang_Vietnamese'); ?></option>
+                                <option <?php echo $lang === 'english' ? 'selected' : NULL ?> id="english" value="english"><?php echo lang('drop_lang_English'); ?></option>
+                                <option <?php echo $lang === 'vietnamese' ? 'selected' : NULL ?> id="vietnamese" value="vietnamese"><?php echo lang('drop_lang_Vietnamese'); ?></option>
                             </select>
                         </div>
                     </div>

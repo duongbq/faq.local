@@ -22,7 +22,7 @@ class Category_model extends CI_Model {
     }
     
     function get_all() {
-        $this->db->where('lang', !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang')); 
+        $this->db->where('lang', !$this->csession->get('lang') ? 'english' : $this->csession->get('lang')); 
         return $this->db->get($this->table_name)->result();
     }
     
@@ -43,7 +43,7 @@ class Category_model extends CI_Model {
         
         $this->db->limit($config['limit'], $config['offset']);
         
-        $this->db->where('lang', !$this->csession->get('lang') ? 'en_US' : $this->csession->get('lang')); 
+        $this->db->where('lang', !$this->csession->get('lang') ? 'english' : $this->csession->get('lang')); 
         
         return $this->db->get($this->table_name)->result();
     }
