@@ -1,5 +1,6 @@
 <?php
 $popular_articles = get_popular_articles();
+$recently_viewed_articles = get_articles_from_cookie();
 ?>
 
 <div class="sub_box_r1">
@@ -19,22 +20,17 @@ $popular_articles = get_popular_articles();
                 <?php echo anchor('/article/' . mb_strtolower(url_title(removesign($article->category))) . '-c' . $article->category_id . '-' . mb_strtolower(url_title(removesign($article->title))) . '-i' . $article->id, $article->title); ?>
             </li>
         <?php endforeach; ?>
-
-        <!--            <li class="tx3"><a href="1">How to deposit? </a></li>
-                    <li class="tx3"><a href="1">How to get Deposit Bonus?</a></li>
-                    <li class="tx3"><a href="1">How to Copy Order from Guru?</a></li>
-                    <li class="tx3"><a href="1">How to Open a New Account</a></li>
-                    <li class="tx3"><a href="1">What is BO?</a></li>-->
     </ul>
 </div><!-- end 1 sub_box_r2--> 
 <div class="sub_box_r2">
     <p class="title_right_2"><?php echo lang('sidebar_Recently_Viewed'); ?></p>
     <ul class="box_content">
-        <!--            <li class="tx3"><a href="1">How to deposit? </a></li>
-                    <li class="tx3"><a href="1">How to get Deposit Bonus?</a></li>
-                    <li class="tx3"><a href="1">How to Copy Order from Guru?</a></li>
-                    <li class="tx3"><a href="1">How to Open a New Account</a></li>
-                    <li class="tx3"><a href="1">What is BO?</a></li>-->
+        
+        <?php foreach ($recently_viewed_articles as $article): ?>
+            <li class="tx1">
+                <?php echo anchor('/article/' . mb_strtolower(url_title(removesign($article->category))) . '-c' . $article->category_id . '-' . mb_strtolower(url_title(removesign($article->title))) . '-i' . $article->id, $article->title); ?>
+            </li>
+        <?php endforeach; ?>
     </ul>
 </div><!-- end 1 sub_box_r2-->  
 

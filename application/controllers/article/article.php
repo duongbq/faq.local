@@ -26,6 +26,8 @@ class Article extends Front_Controller {
 
         set_total_view_by_id($article_id);
         
+        save_article_in_cookie($article_id);
+        
         $category = $this->category_model->get_by_id($category_id);
 
         $related_articles = get_related_articles($article_id, $category_id);

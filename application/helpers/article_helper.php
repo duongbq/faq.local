@@ -77,27 +77,39 @@ if (!function_exists('save_article_in_cookie')) {
 
     function save_article_in_cookie($article_id = 0) {
 
+        $article_ids = get_cookie('article_ids');
+
+        $values = $article_ids != '' ? $article_ids . '%' . $article_id : $article_id;
+
+        $input = array();
+        foreach (explode('%', $values) as $value) {
+            array_push($input, $value);
+        }
+
         $cookie = array(
-            'name' => 'article_in_cookie',
-            'value' => $article_id,
-            'expire' => time(),
-            'domain' => base_url(),
-            'path' => '/',
-            'prefix' => 'myprefix_',
-            'secure' => TRUE
+            'name' => 'article_ids',
+            'value' => implode('%', array_unique($input)),
+            'expire' => 60 * 60 * 24 * 7
         );
 
         set_cookie($cookie);
-        
-        
     }
 
 }
 //TODO
 if (!function_exists('get_articles_from_cookie')) {
 
-    function get_articles_from_cookie() {
-        
+    function get_articles_from_cookie($limit = 5) {
+
+        $CI = & get_instance();
+        $CI->db->select('articles.*, categories.category');
+        $CI->db->join('categories', 'categories.id = articles.category_id');
+        $CI->db->where_in('articles.id', explode('%', get_cookie('article_ids')));
+        $CI->db->where('articles.lang', !$CI->csession->get('lang') ? 'english' : $CI->csession->get('lang'));
+        $CI->db->limit($limit);
+//        $CI->db->order_by('updated_at');
+
+        return $CI->db->get('articles')->result();
     }
 
 }
@@ -109,11 +121,11 @@ if (!function_exists('get_tags_by_article_id')) {
     function get_tags_by_article_id($article_id = 0) {
 
         $CI = & get_instance();
-
-        $CI->db->where('article_id', $article_id);
+        
         $CI->db->select('artiles_tags.*, tags.tag');
         $CI->db->join('tags', 'tags.id = artiles_tags.tag_id');
-
+        $CI->db->where('article_id', $article_id);
+        
         $tags = $CI->db->get('artiles_tags')->result();
 
         $article_tags = '';
