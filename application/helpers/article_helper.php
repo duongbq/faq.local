@@ -122,11 +122,11 @@ if (!function_exists('get_tags_by_article_id')) {
 
         $CI = & get_instance();
         
-        $CI->db->select('artiles_tags.*, tags.tag');
-        $CI->db->join('tags', 'tags.id = artiles_tags.tag_id');
+        $CI->db->select('articles_tags.*, tags.tag');
+        $CI->db->join('tags', 'tags.id = articles_tags.tag_id');
         $CI->db->where('article_id', $article_id);
         
-        $tags = $CI->db->get('artiles_tags')->result();
+        $tags = $CI->db->get('articles_tags')->result();
 
         $article_tags = '';
 

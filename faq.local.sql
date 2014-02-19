@@ -56,10 +56,10 @@ INSERT INTO `articles` (`id`, `category_id`, `title`, `meta_description`, `meta_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artiles_tags`
+-- Table structure for table `articles_tags`
 --
 
-CREATE TABLE IF NOT EXISTS `artiles_tags` (
+CREATE TABLE IF NOT EXISTS `articles_tags` (
   `article_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL,
   PRIMARY KEY (`article_id`,`tag_id`)
