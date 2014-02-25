@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 17, 2014 at 06:32 PM
+-- Generation Time: Feb 25, 2014 at 05:22 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.24-1+sury.org~precise+1
 
@@ -37,6 +37,8 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `lang` varchar(45) NOT NULL DEFAULT 'english',
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `total_view` int(11) NOT NULL DEFAULT '0',
+  `total_vote` int(11) NOT NULL DEFAULT '0',
+  `voted_point` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
@@ -44,14 +46,14 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `category_id`, `title`, `meta_description`, `meta_keywords`, `content`, `origin_id`, `lang`, `updated_at`, `total_view`) VALUES
-(1, 1, 'Welcome!', '', '', '', 0, 'english', '2014-02-16 17:00:00', 0),
-(2, 1, 'What can I do if I experience...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 0),
-(3, 1, 'How to open an Social Trade ...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 0),
-(4, 1, 'What if I forget my...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 0),
-(5, 1, 'How do I unlink my...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 0),
-(6, 2, 'What is LOVE?', '', '', 'Don''t hurt me!!!!', 0, 'english', '2014-02-16 17:00:00', 0),
-(7, 4, 'Tình là gì?', '', '', 'HỎi thể gian tình là gì? ', 6, 'vietnamese', '2014-02-16 17:00:00', 0);
+INSERT INTO `articles` (`id`, `category_id`, `title`, `meta_description`, `meta_keywords`, `content`, `origin_id`, `lang`, `updated_at`, `total_view`, `total_vote`, `voted_point`) VALUES
+(1, 1, 'Welcome!', '', '', '', 0, 'english', '2014-02-16 17:00:00', 40, 10, 19),
+(2, 1, 'What can I do if I experience...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 14, 3, 8),
+(3, 1, 'How to open an Social Trade ...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 5, 3, 8),
+(4, 1, 'What if I forget my...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 6, 1, 4),
+(5, 1, 'How do I unlink my...', '', '', '', 0, 'english', '2014-02-16 17:00:00', 6, 1, 4),
+(6, 2, 'What is LOVE?', '', '', 'Don''t hurt me!!!!', 0, 'english', '2014-02-16 17:00:00', 0, 0, 0),
+(7, 4, 'Tình là gì?', '', '', 'HỎi thể gian tình là gì? ', 6, 'vietnamese', '2014-02-16 17:00:00', 10, 0, 0);
 
 -- --------------------------------------------------------
 
