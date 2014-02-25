@@ -9,7 +9,6 @@ $recently_viewed_articles = get_articles_from_cookie();
         <li class="email">
             <a href="mailto:bui.quy.duong@framgia.com"><?php echo lang('sidebar_Email_Us'); ?></a>
         </li>
-        <li><img style="margin-top:30px" src="images/social.png" alt="" /></li>
     </ul>
 </div><!-- end 1 sub_box_r1-->
 <div class="sub_box_r2">

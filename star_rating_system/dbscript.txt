@@ -1,0 +1,6 @@
+﻿CREATE TABLE  `articlerating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `articleid` int(11) NOT NULL DEFAULT '0',
+  `ratingpoint` bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=0

@@ -28,6 +28,13 @@ $lang['last_updated'] = 'Last Updated:';
 
 $lang['related_article'] = 'Related Article';
 $lang['same_category'] = 'Same Category';
+$lang['rate'] = 'Rate: ';
+$lang['rate_not_at_all'] = 'Not at all';
+$lang['rate_somewhat'] = 'Somewhat';
+$lang['rate_average'] = 'Average';
+$lang['rate_good'] = 'Good';
+$lang['rate_very_good'] = 'Very Good';
+
 
 
 

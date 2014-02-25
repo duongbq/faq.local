@@ -25,9 +25,9 @@ class Article extends Front_Controller {
         $article = get_article_by_id($article_id);
 
         set_total_view_by_id($article_id);
-        
+
         save_article_in_cookie($article_id);
-        
+
         $category = $this->category_model->get_by_id($category_id);
 
         $related_articles = get_related_articles($article_id, $category_id);
@@ -43,6 +43,36 @@ class Article extends Front_Controller {
         $this->layout->meta_keywords($article->meta_description . ' | ' . $category->category . ' | ' . DEFAULT_SITE_TITLE);
 
         $this->layout->view('article/view_detail', $view_data);
+    }
+
+    function rate_for_article() {
+
+        if ($this->input->is_ajax_request()) {
+            
+            $article_id = $this->input->post('article_id');
+            $points = $this->input->post('points');
+            
+            set_rating_for_article($article_id, $points);
+
+            $average = get_rating_points_by_article_id($article_id);
+
+            $responsetext = "";
+            for ($i = 1; $i <= 5; $i++) {
+                if ($average >= $i)
+                    $responsetext .= '<img src="/assets/frontend/images/rate1.gif" hspace="1" vspace="0"  alt="' . $average . '%"/>';
+                else {
+                    if ($i == intval($average + .7))
+                        $responsetext .= '<img src="/assets/frontend/images/rate.gif" hspace="1" alt="' . $average . '%"/>';
+                    else
+                        $responsetext .= '<img src="/assets/frontend/images/rate0.gif" hspace="1" alt="' . $average . '%"/>';
+                }
+            }
+            
+            echo $responsetext;
+            
+        } else {
+            redirect(base_url());
+        }
     }
 
 }

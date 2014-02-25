@@ -24,3 +24,9 @@ $lang['last_updated'] = 'Cập nhật lần cuối:';
 
 $lang['related_article'] = 'Bài viết liên quan';
 $lang['same_category'] = 'Bài viết cùng loại';
+$lang['rate'] = 'Đánh giá: ';
+$lang['rate_not_at_all'] = 'Không tốt';
+$lang['rate_somewhat'] = 'Một chút';
+$lang['rate_average'] = 'Trung bình';
+$lang['rate_good'] = 'Tốt';
+$lang['rate_very_good'] = 'Rất tốt';

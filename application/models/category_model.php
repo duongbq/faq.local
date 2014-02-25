@@ -33,7 +33,7 @@ class Category_model extends CI_Model {
     
     function get_all_with_paging($options = array()) {
         
-        $total_row = count($this->get_all()); ;
+        $total_row = count($this->get_all());
         
         $config = get_config_paging(array('page' => $options['page'], 'per_page' => $options['per_page'], 'total_rows' => $total_row));
         

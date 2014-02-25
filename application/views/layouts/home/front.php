@@ -16,11 +16,13 @@
         <?php echo link_tag('assets/frontend/css/images/favicon.ico', 'shortcut icon', 'image/x-icon'); ?>
 
         <?php echo link_tag('assets/fancybox/jquery.fancybox-1.3.4.css'); ?>
+        
+        <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-1.7.1.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-ui-1.10.3.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
         <script src="<?php echo base_url(); ?>assets/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
-        <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-1.7.1.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/backend/js/libs/jquery-ui-1.10.3.min.js"></script>
+        
         <!--<script src="<?php //echo base_url();      ?>assets/backend/js/libs/modernizr-2.0.6.js"></script>-->
         <!--<script src="<?php //echo base_url();      ?>assets/backend/js/libs/bootstrap.min.js"></script>-->
 

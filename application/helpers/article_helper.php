@@ -121,11 +121,11 @@ if (!function_exists('get_tags_by_article_id')) {
     function get_tags_by_article_id($article_id = 0) {
 
         $CI = & get_instance();
-        
+
         $CI->db->select('articles_tags.*, tags.tag');
         $CI->db->join('tags', 'tags.id = articles_tags.tag_id');
         $CI->db->where('article_id', $article_id);
-        
+
         $tags = $CI->db->get('articles_tags')->result();
 
         $article_tags = '';
@@ -157,6 +157,46 @@ if (!function_exists('get_related_articles')) {
         $CI->db->order_by('updated_at');
 
         return $CI->db->get('articles')->result();
+    }
+
+}
+
+if (!function_exists('set_rating_for_article')) {
+
+    function set_rating_for_article($article_id = 0, $points = 0) {
+
+        $article = get_article_by_id($article_id);
+        
+        $total_vote = $article->total_vote;
+        $voted_point = $article->voted_point;
+
+        $CI = & get_instance();
+        $data = array(
+            'total_vote' => $total_vote + 1,
+            'voted_point' => $voted_point + $points
+        );
+
+        $CI->db->update('articles', $data, array('id' => $article_id));
+    }
+
+}
+
+if (!function_exists('get_rating_points_by_article_id')) {
+
+    function get_rating_points_by_article_id($article_id = 0) {
+
+        $article = get_article_by_id($article_id);
+
+        $total_vote = $article->total_vote;
+        $voted_point = $article->voted_point;
+
+        $average = 0;
+        if ($total_vote > 0)
+            $average = $voted_point / $total_vote;
+        
+        $average = Round($average, 2);
+
+        return $average;
     }
 
 }
