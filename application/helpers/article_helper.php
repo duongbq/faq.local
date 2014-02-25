@@ -166,7 +166,7 @@ if (!function_exists('set_rating_for_article')) {
     function set_rating_for_article($article_id = 0, $points = 0) {
 
         $article = get_article_by_id($article_id);
-        
+
         $total_vote = $article->total_vote;
         $voted_point = $article->voted_point;
 
@@ -193,10 +193,31 @@ if (!function_exists('get_rating_points_by_article_id')) {
         $average = 0;
         if ($total_vote > 0)
             $average = $voted_point / $total_vote;
-        
+
         $average = Round($average, 2);
 
         return $average;
+    }
+
+}
+
+if (!function_exists('get_rating_star_by_average')) {
+
+    function get_rating_star_by_article_id($average = 0) {
+
+        $responsetext = "";
+        for ($i = 1; $i <= 5; $i++) {
+            if ($average >= $i)
+                $responsetext .= '<img src="/assets/frontend/images/rate1.gif" hspace="1" vspace="0"  alt="' . $average . '%"/>';
+            else {
+                if ($i == intval($average + .7))
+                    $responsetext .= '<img src="/assets/frontend/images/rate.gif" hspace="1" alt="' . $average . '%"/>';
+                else
+                    $responsetext .= '<img src="/assets/frontend/images/rate0.gif" hspace="1" alt="' . $average . '%"/>';
+            }
+        }
+        
+        return $responsetext;
     }
 
 }

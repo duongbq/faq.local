@@ -20,9 +20,6 @@ $average = get_rating_points_by_article_id($article->id);
             $(this).mouseover(function() {
                 setRating(i + 1);
             });
-//            $(this).click(function() {
-//                submitRating(contentId, i + 1)
-//            });
         });
 
         setRating(<?php echo $average; ?>);
@@ -42,6 +39,7 @@ $average = get_rating_points_by_article_id($article->id);
     }
 
     function submitRating(points) {
+
         $('#setrating').html('<img src="/assets/frontend/images/progress.gif" align="center">');
 
         $.ajax(
@@ -53,14 +51,9 @@ $average = get_rating_points_by_article_id($article->id);
                         'points': points
                     },
                     success: function(r) {
-                        $('#setrating').html(r);
+                        $('#setrating').html('<?php echo lang('rate'); ?>' + r);
                     }
                 });
-
-//            $.post(url, {'id': id, 'p': p}, function(r) {
-//                eval(r.s)
-//            });
-
     }
 
 </script>
@@ -71,15 +64,12 @@ $average = get_rating_points_by_article_id($article->id);
             <?php echo lang('last_updated'); ?> <?php echo date('d M Y H:i', strtotime($article->updated_at)); ?>
             <!--Rating-->
             <div id="setrating" class="lst">
-
-                <div>
-                    <?php echo lang('rate'); ?>
-                    <img onclick="submitRating(0);" src="/assets/frontend/images/rate0.gif" id="R1" alt="0" style="cursor:pointer" title="<?php echo lang('rate_not_at_all'); ?>"/>
-                    <img onclick="submitRating(1);" src="/assets/frontend/images/rate0.gif" id="R2" alt="1" style="cursor:pointer" title="<?php echo lang('rate_somewhat'); ?>" />
-                    <img onclick="submitRating(2);" src="/assets/frontend/images/rate0.gif" id="R3" alt="2" style="cursor:pointer" title="<?php echo lang('rate_average'); ?>" />
-                    <img onclick="submitRating(3);" src="/assets/frontend/images/rate0.gif" id="R4" alt="3" style="cursor:pointer" title="<?php echo lang('rate_good'); ?>" />
-                    <img onclick="submitRating(4);" src="/assets/frontend/images/rate0.gif" id="R5" alt="4" style="cursor:pointer" title="<?php echo lang('rate_very_good'); ?>"/>
-                </div>
+                <?php echo lang('rate'); ?>
+                <img onclick="submitRating(0);" src="/assets/frontend/images/rate0.gif" id="R1" alt="0" style="cursor:pointer" title="<?php echo lang('rate_not_at_all'); ?>"/>
+                <img onclick="submitRating(1);" src="/assets/frontend/images/rate0.gif" id="R2" alt="1" style="cursor:pointer" title="<?php echo lang('rate_somewhat'); ?>" />
+                <img onclick="submitRating(2);" src="/assets/frontend/images/rate0.gif" id="R3" alt="2" style="cursor:pointer" title="<?php echo lang('rate_average'); ?>" />
+                <img onclick="submitRating(3);" src="/assets/frontend/images/rate0.gif" id="R4" alt="3" style="cursor:pointer" title="<?php echo lang('rate_good'); ?>" />
+                <img onclick="submitRating(4);" src="/assets/frontend/images/rate0.gif" id="R5" alt="4" style="cursor:pointer" title="<?php echo lang('rate_very_good'); ?>"/>
             </div>
             <!--Rating-->    
         </h4>

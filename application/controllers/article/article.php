@@ -55,20 +55,8 @@ class Article extends Front_Controller {
             set_rating_for_article($article_id, $points);
 
             $average = get_rating_points_by_article_id($article_id);
-
-            $responsetext = "";
-            for ($i = 1; $i <= 5; $i++) {
-                if ($average >= $i)
-                    $responsetext .= '<img src="/assets/frontend/images/rate1.gif" hspace="1" vspace="0"  alt="' . $average . '%"/>';
-                else {
-                    if ($i == intval($average + .7))
-                        $responsetext .= '<img src="/assets/frontend/images/rate.gif" hspace="1" alt="' . $average . '%"/>';
-                    else
-                        $responsetext .= '<img src="/assets/frontend/images/rate0.gif" hspace="1" alt="' . $average . '%"/>';
-                }
-            }
             
-            echo $responsetext;
+            echo get_rating_star_by_article_id($average);
             
         } else {
             redirect(base_url());
